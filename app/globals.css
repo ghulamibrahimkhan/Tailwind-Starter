@@ -2,26 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  /* Nav */
+  .nav {
+    @apply flex justify-center items-center bg-white 
+    flex-wrap py-5 px-6;
   }
+  .nav ul {
+    @apply flex-[100%] order-last mt-4 md:order-none md:flex-auto md:mt-0 text-center -mx-5 md:mx-0;
+  }
+  .nav li {
+    @apply hover:text-blue-400 inline-block mx-5 md:mx-10;
+  }
+  .nav.logo {
+    @apply inline h-7 w-14;
+  }
+
+  /* Quote */
+  .quote {
+    @apply m-3 p-6 w-72 h-52 bg-blue-100 rounded-lg;
+  }
+  .quote p {
+    @apply font-serif italic text-lg text-gray-700 leading-snug mb-1;
+  }
+  .quote cite {
+    @apply text-sm text-gray-500;
+  }
+
+  /* Card */
+  .card {
+    @apply my-2 p-9 max-w-xs border-solid border-2 border-slate-300 rounded;
+  }
+  .card h1 {
+    @apply font-bold text-3xl text-blue-600;
+  }
+  .card p {
+    @apply mt-4;
+  }
+  .bothLinks {
+    @apply mt-4 flex justify-between;
+  }
+  .link {
+    @apply px-4 py-2 bg-blue-200 rounded-md text-gray-900 text-sm;
+  }
+
+  /* Profile */
+  .profile {
+    @apply flex justify-around m-14 w-auto max-w-none flex-wrap;
+  }
+  .team-profile {
+    @apply text-center px-6 py-4;
+  }
+  .team-profile-image {
+    /*     @apply w-32 h-32 object-cover rounded-full object-top; */
+    @apply m-1 w-32 h-32 object-cover rounded-full object-top;
+  }
+
+  /* Profile Card */
+  .profile-card-main {
+    @apply mt-16 mx-16 bg-white flex flex-wrap;
+  }
+  .profile-card {
+    @apply flex items-center p-4;
+  }
+  .profle-card-img {
+    @apply w-20 h-20 object-cover rounded-full mr-4;
+  }
+
+  .split {
+    @apply flex justify-center items-center text-center;
+  }
+
+  /* Pricing Plan */
+
+  .pricingPlanC {
+    @apply bg-white py-7 pl-7 rounded-lg flex-1;
+  }
+  .pricingPlanC h2 {
+    @apply text-3xl font-bold;
+  }
+  .pricingPlanC p {
+    @apply text-3xl mt-4 font-bold;
+  }
+  .pricingPlanC span {
+    @apply text-slate-300;
+  }
+
+  /* Ratio */
+  .ratio {
+    @apply my-4 max-w-7xl mx-auto rounded-xl bg-white flex;
+  }
+  .ratioImg {
+    @apply rounded-l-xl flex-1 w-full object-cover;
+  }
+  .details {
+    @apply p-8 flex-[2];
+  }
+
+  /* Grid */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.item {
+  @apply p-12 text-4xl font-bold text-white uppercase tracking-wide bg-center;
 }
+.item1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/fpg1.webp");
+  background-size: cover;
+}
+.item2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/fpg2.webp");
+  background-size: cover;
+}
+.item3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/fpg2.webp");
+  background-size: cover;
+}
+.item4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/fpg1.webp");
+  background-size: cover;
+}
+
+/* pg */
+.pcg {
+  @apply bg-white h-[30rem] grid rounded-lg mx-auto text-center;
+}
+
+/* contact Form */
+.formContainer {
+  @apply max-w-2xl my-8 mx-auto p-8 border border-gray-300;
+}
+.fstForm label {
+  @apply p-2 mr-6 text-slate-700;
+}
+.fstForm input {
+  @apply px-3 border border-gray-300 rounded;
+}
+.form-button {
+  @apply inline-block bg-red-500 rounded-full py-3 px-9 text-white font-bold;
+}
+.sndForm input,
+textarea {
+  @apply mt-1 py-2 px-3 border border-gray-300 rounded-md w-full resize-none;
+}
+
+/* Rss */
+.rss h3{
+  @apply text-blue-700 font-bold mt-3 mb-1 text-xl
+}
+
+/* Tgs */
+.tsg div{
+  @apply p-10 rounded
+}
+.tsg h3{
+  @apply pb-6
+}
+
+/* FFIINNAALL */
+
+.fss{
+  @apply bg-white 
+}
+.fst-div{
+ @apply grid grid-cols-[auto,1fr] p-6 gap-6 
+}
+.snd-div h3{
+  @apply font-bold text-xl
+}
+.snd-div p{
+  @apply mt-4 
+}
+.fssIcon{
+  @apply text-[#d79491] text-5xl
+}
+
+
+
+/* SMDC */
+.smdc{
+  @apply text-white
+}
+.smdDiv{
+@apply bg-gray-800 p-6 rounded
+}
+
+/* Tmc */
+.tmcStats{
+  @apply gap-4 mt-6
+}
+.tmcStats p{
+  @apply text-slate-500 text-sm bg-green-200
+}
+.tmcStats h3{
+  @apply font-bold text-xl
+}
+
+.tmcImage{
+  @apply  rounded-full h-7 w-14 -mr-1
+}
+
+
